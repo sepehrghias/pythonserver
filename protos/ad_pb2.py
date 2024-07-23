@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x08\x61\x64.proto\x12\x08Yektanet\")\n\nAd_Request\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x0f\n\x07min_cpc\x18\x02 \x01(\x03\"(\n\x08\x41\x64_Reply\x12\r\n\x05title\x18\x01 \x01(\t\x12\r\n\x05image\x18\x02 \x01(\t2I\n\nAdsWithCpc\x12;\n\rget_ad_by_cpc\x12\x14.Yektanet.Ad_Request\x1a\x12.Yektanet.Ad_Reply\"\x00\x42\x0cZ\n/Yektanet/b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x08\x61\x64.proto\x12\x08Yektanet\"/\n\x10TargetingRequest\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x0f\n\x07min_cpc\x18\x02 \x01(\x03\"1\n\x11TargetingResponse\x12\r\n\x05title\x18\x01 \x01(\t\x12\r\n\x05image\x18\x02 \x01(\t2S\n\x0b\x41\x64Retriever\x12\x44\n\x07get_ads\x12\x1a.Yektanet.TargetingRequest\x1a\x1b.Yektanet.TargetingResponse\"\x00\x42\x0cZ\n/Yektanet/b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -22,10 +22,10 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'ad_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z\n/Yektanet/'
-  _globals['_AD_REQUEST']._serialized_start=22
-  _globals['_AD_REQUEST']._serialized_end=63
-  _globals['_AD_REPLY']._serialized_start=65
-  _globals['_AD_REPLY']._serialized_end=105
-  _globals['_ADSWITHCPC']._serialized_start=107
-  _globals['_ADSWITHCPC']._serialized_end=180
+  _globals['_TARGETINGREQUEST']._serialized_start=22
+  _globals['_TARGETINGREQUEST']._serialized_end=69
+  _globals['_TARGETINGRESPONSE']._serialized_start=71
+  _globals['_TARGETINGRESPONSE']._serialized_end=120
+  _globals['_ADRETRIEVER']._serialized_start=122
+  _globals['_ADRETRIEVER']._serialized_end=205
 # @@protoc_insertion_point(module_scope)

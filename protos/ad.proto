@@ -2,16 +2,16 @@ syntax = "proto3";
 option go_package = "/Yektanet/";
 package Yektanet;
 
-service AdsWithCpc{
-  rpc get_ad_by_cpc (Ad_Request) returns (Ad_Reply) {}
+service AdRetriever{
+  rpc get_ads(TargetingRequest) returns (TargetingResponse) {}
 }
 
-message Ad_Request{
+message TargetingRequest{
   int64 id = 1;
   int64 min_cpc = 2;
 }
 
-message Ad_Reply{
+message TargetingResponse{
   string title = 1;
   string image = 2;
 }
