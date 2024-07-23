@@ -4,7 +4,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
-class Ad_Request(_message.Message):
+class TargetingRequest(_message.Message):
     __slots__ = ("id", "min_cpc")
     ID_FIELD_NUMBER: _ClassVar[int]
     MIN_CPC_FIELD_NUMBER: _ClassVar[int]
@@ -12,7 +12,7 @@ class Ad_Request(_message.Message):
     min_cpc: int
     def __init__(self, id: _Optional[int] = ..., min_cpc: _Optional[int] = ...) -> None: ...
 
-class Ad_Reply(_message.Message):
+class TargetingResponse(_message.Message):
     __slots__ = ("title", "image")
     TITLE_FIELD_NUMBER: _ClassVar[int]
     IMAGE_FIELD_NUMBER: _ClassVar[int]

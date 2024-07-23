@@ -30,7 +30,7 @@ if _version_not_supported:
     )
 
 
-class AdsWithCpcStub(object):
+class AdRetrieverStub(object):
     """Missing associated documentation comment in .proto file."""
 
     def __init__(self, channel):
@@ -39,43 +39,43 @@ class AdsWithCpcStub(object):
         Args:
             channel: A grpc.Channel.
         """
-        self.get_ad_by_cpc = channel.unary_unary(
-                '/Yektanet.AdsWithCpc/get_ad_by_cpc',
-                request_serializer=ad__pb2.Ad_Request.SerializeToString,
-                response_deserializer=ad__pb2.Ad_Reply.FromString,
+        self.get_ads = channel.unary_unary(
+                '/Yektanet.AdRetriever/get_ads',
+                request_serializer=ad__pb2.TargetingRequest.SerializeToString,
+                response_deserializer=ad__pb2.TargetingResponse.FromString,
                 _registered_method=True)
 
 
-class AdsWithCpcServicer(object):
+class AdRetrieverServicer(object):
     """Missing associated documentation comment in .proto file."""
 
-    def get_ad_by_cpc(self, request, context):
+    def get_ads(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
 
-def add_AdsWithCpcServicer_to_server(servicer, server):
+def add_AdRetrieverServicer_to_server(servicer, server):
     rpc_method_handlers = {
-            'get_ad_by_cpc': grpc.unary_unary_rpc_method_handler(
-                    servicer.get_ad_by_cpc,
-                    request_deserializer=ad__pb2.Ad_Request.FromString,
-                    response_serializer=ad__pb2.Ad_Reply.SerializeToString,
+            'get_ads': grpc.unary_unary_rpc_method_handler(
+                    servicer.get_ads,
+                    request_deserializer=ad__pb2.TargetingRequest.FromString,
+                    response_serializer=ad__pb2.TargetingResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'Yektanet.AdsWithCpc', rpc_method_handlers)
+            'Yektanet.AdRetriever', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
-    server.add_registered_method_handlers('Yektanet.AdsWithCpc', rpc_method_handlers)
+    server.add_registered_method_handlers('Yektanet.AdRetriever', rpc_method_handlers)
 
 
  # This class is part of an EXPERIMENTAL API.
-class AdsWithCpc(object):
+class AdRetriever(object):
     """Missing associated documentation comment in .proto file."""
 
     @staticmethod
-    def get_ad_by_cpc(request,
+    def get_ads(request,
             target,
             options=(),
             channel_credentials=None,
@@ -88,9 +88,9 @@ class AdsWithCpc(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/Yektanet.AdsWithCpc/get_ad_by_cpc',
-            ad__pb2.Ad_Request.SerializeToString,
-            ad__pb2.Ad_Reply.FromString,
+            '/Yektanet.AdRetriever/get_ads',
+            ad__pb2.TargetingRequest.SerializeToString,
+            ad__pb2.TargetingResponse.FromString,
             options,
             channel_credentials,
             insecure,
